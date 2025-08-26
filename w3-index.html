@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator JS</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- jQuery + SweetAlert -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>โปรแกรมคำนวณ</h2>
+
+    <!-- ปุ่ม + ตาราง -->
+    <div class="left-panel">
+      <!-- ปุ่มเปิด modal -->
+      <button id="openModal">กรอก input</button>
+      <button id="clearData" style="background:#e74c3c; color:white; margin-left:10px;">
+        ล้างข้อมูล
+      </button>
+
+      <!-- ตารางผลลัพธ์ -->
+      <table>
+        <thead>
+          <tr>
+            <th>Input-1</th>
+            <th>Input-2</th>
+            <th>Input-3</th>
+            <th>Equation</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody id="resultTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="inputModal" class="modal">
+    <div class="modal-content">
+      <form id="calcForm">
+        
+        <!-- เลือกวันที่ -->
+        <label>
+          เลือกวันที่:
+          <input type="date" id="dateInput" required>
+        </label>
+
+        <!-- Input1 และ Input2 -->
+        <div class="input-row">
+          <input type="number" id="input1" placeholder="Input1" required>
+          <input type="number" id="input2" placeholder="Input2" required>
+        </div>
+
+        <!-- Operation -->
+        <label>
+          Operation:
+          <select id="operation">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+        </label>
+
+        <!-- Input3 -->
+        <input type="number" id="input3" placeholder="Input3" required>
+
+        <!-- ปุ่มบันทึก -->
+        <button type="submit" class="submit-btn">คำนวณและบันทึก</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
