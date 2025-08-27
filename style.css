@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
+  
 }
 
 .container {
@@ -96,4 +97,31 @@ table th {
   width: 100%;
 }
 
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+    max-width: 100%;  /* ✅ ยืดเต็มจอมือถือ */
+  }
 
+  button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #clearData {
+    margin-left: 0; 
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  table th, table td {
+    padding: 6px;
+  }
+}

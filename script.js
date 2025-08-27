@@ -57,23 +57,6 @@ $(document).ready(function () {
     modal.hide();
   });
 
-  // 🆕 ปุ่มล้างข้อมูล
-  $("#clearData").click(function () {
-    Swal.fire({
-      title: "คุณแน่ใจหรือไม่?",
-      text: "ข้อมูลทั้งหมดจะถูกลบออกถาวร",
-      icon: "warning",
-      showCancelButton: true,
-      confirmButtonText: "ใช่, ลบเลย!",
-      cancelButtonText: "ยกเลิก"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        localStorage.removeItem("calcData"); // ลบข้อมูลใน localStorage
-        $("#resultTable").empty(); // เคลียร์ตาราง
-        Swal.fire("ลบแล้ว!", "ข้อมูลถูกล้างเรียบร้อย", "success");
-      }
-    });
-  });
 
   // ฟังก์ชันเพิ่มแถว
   function addRow(data) {
