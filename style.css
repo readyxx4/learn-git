@@ -97,6 +97,13 @@ table th {
   width: 100%;
 }
 
+#clearData {
+  background: red;
+  color: white;
+  margin-left: 10px;
+}
+
+
 /* 📱 Responsive */
 @media (max-width: 768px) {
   .container {

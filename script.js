@@ -78,4 +78,27 @@ $(document).ready(function () {
     let stored = JSON.parse(localStorage.getItem("calcData")) || [];
     stored.forEach(addRow);
   }
+  // ล้างข้อมูลทั้งหมด
+$("#clearData").click(function () {
+  Swal.fire({
+    title: 'คุณแน่ใจหรือไม่?',
+    text: "ข้อมูลทั้งหมดจะถูกลบไม่สามารถกู้คืนได้!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'ใช่ ลบเลย',
+    cancelButtonText: 'ยกเลิก'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      localStorage.removeItem("calcData"); // ลบข้อมูลใน localStorage
+      $("#resultTable").empty(); // ล้างตาราง
+      Swal.fire(
+        'ลบแล้ว!',
+        'ข้อมูลทั้งหมดถูกลบเรียบร้อย.',
+        'success'
+      );
+    }
+  });
+});
 });
