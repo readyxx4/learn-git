@@ -6,14 +6,14 @@ $(document).ready(function () {
     modal.show();
   });
 
-  // ปิด modal เมื่อคลิกนอกกรอบ
+  // ปิด modal
   $(window).click(function (e) {
     if (e.target.id === "inputModal") {
       modal.hide();
     }
   });
 
-  // โหลดข้อมูลเก่า
+  
   loadTable();
 
   $("#calcForm").submit(function (e) {
